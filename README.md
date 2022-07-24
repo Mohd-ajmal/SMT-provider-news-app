@@ -1,0 +1,1 @@
+# SMT-provider-news-app
