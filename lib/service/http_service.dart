@@ -12,4 +12,16 @@ class HttpService {
     }
     return response;
   }
+
+  // get business news
+  static Future<http.Response> getBusinessNews() async {
+    http.Response response;
+    var url = Uri.parse(Constants.everyNews);
+    try {
+      response = await http.get(url);
+    } catch (e) {
+      rethrow;
+    }
+    return response;
+  }
 }

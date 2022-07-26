@@ -93,7 +93,7 @@ class _AllNewsState extends State<AllNews> {
                           dotHeight: 8.0,
                           dotWidth: 8.0,
                           activeDotColor: Color(0xFFFBC02D),
-                          dotColor: Colors.white,
+                          dotColor: Colors.grey,
                         ),
                       )
                     ],
@@ -154,7 +154,7 @@ class _AllNewsState extends State<AllNews> {
                 ],
               )
             : const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(color: Colors.yellow),
               )
         : Center(child: Text(response.error));
   }
