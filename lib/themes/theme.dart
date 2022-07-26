@@ -22,7 +22,7 @@ class AppTheme {
       color: Colors.teal,
     ),
     iconTheme: const IconThemeData(
-      color: Colors.white54,
+      color: Colors.black,
     ),
     textTheme: const TextTheme(
       bodyText1: TextStyle(
