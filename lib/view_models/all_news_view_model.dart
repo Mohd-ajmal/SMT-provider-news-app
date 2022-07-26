@@ -36,7 +36,7 @@ class AllNewsViewModel extends ChangeNotifier {
       return response;
     } on Exception catch (e) {
       if (e is SocketException) {
-        _error = 'Please check your Internet connction and try again';
+        _error = 'Please check your Internet connction';
         notifyListeners();
       } else if (e is HttpException) {
         _error = 'Something went wrong while calling http';
