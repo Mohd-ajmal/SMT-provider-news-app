@@ -26,7 +26,7 @@ class AllNewsViewModel extends ChangeNotifier {
         notifyListeners();
       } else {
         _value = response;
-        for (int i = 15; i <= 25; i++) {
+        for (int i = 25; i <= 30; i++) {
           _images.add(response[i].urlToImage);
           _strings.add(response[i].title);
         }

@@ -89,7 +89,7 @@ class _AllNewsState extends State<AllNews> {
                       const SizedBox(height: 20.0),
                       AnimatedSmoothIndicator(
                         activeIndex: response.indicatorIndex,
-                        count: 11,
+                        count: 6,
                         effect: const ScrollingDotsEffect(
                           dotHeight: 8.0,
                           dotWidth: 8.0,
