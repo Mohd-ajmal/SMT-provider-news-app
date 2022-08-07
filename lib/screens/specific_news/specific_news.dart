@@ -96,7 +96,7 @@ class SpecificNews extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        value.description,
+                        value.description ?? "Not specified",
                         style: const TextStyle(fontSize: 15),
                       ),
                       const SizedBox(height: 30),
@@ -106,7 +106,7 @@ class SpecificNews extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        value.content,
+                        value.content ?? "Not specified",
                         style: const TextStyle(fontSize: 15),
                       ),
                     ],

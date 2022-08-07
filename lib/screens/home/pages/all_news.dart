@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:provider/provider.dart';
+
 import 'package:provider1/constants/constants.dart';
 import 'package:provider1/screens/specific_news/specific_news.dart';
 import 'package:provider1/view_models/all_news_view_model.dart';
@@ -34,8 +35,7 @@ class _AllNewsState extends State<AllNews> {
                   Column(
                     children: [
                       CarouselSlider(
-                        items: Provider.of<AllNewsViewModel>(context)
-                            .images
+                        items: response.images
                             .map(
                               (e) => ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
@@ -181,9 +181,9 @@ class _AllNewsState extends State<AllNews> {
                   ),
                 ],
               )
-            : const Center(
-                child: CircularProgressIndicator(color: Colors.yellow),
-              )
-        : Center(child: Text(response.error));
+            : Center(child: Text(response.error))
+        : const Center(
+            child: CircularProgressIndicator(color: Colors.yellow),
+          );
   }
 }

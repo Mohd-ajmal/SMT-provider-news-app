@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:provider1/models/all_news_model.dart';
@@ -7,6 +8,7 @@ class AllNewsRepository {
   static Future<List<Article>?> getAllNewsResponse() async {
     try {
       var response = await HttpService.getAllNews();
+      //print(response.statusCode);
       if (response.statusCode == 200) {
         var result = newsApiFromJson(response.body);
         return result.articles;
@@ -18,6 +20,8 @@ class AllNewsRepository {
     } on FormatException {
       rethrow;
     } on HttpException {
+      rethrow;
+    } on TimeoutException {
       rethrow;
     }
   }

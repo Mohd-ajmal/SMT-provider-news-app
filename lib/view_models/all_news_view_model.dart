@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+
+import 'package:provider1/constants/constants.dart';
 import 'package:provider1/models/all_news_model.dart';
 import 'package:provider1/repository/all_news_repo.dart';
 
@@ -26,9 +28,12 @@ class AllNewsViewModel extends ChangeNotifier {
         notifyListeners();
       } else {
         _value = response;
-        for (int i = 25; i <= 30; i++) {
-          _images.add(response[i].urlToImage);
+
+        for (int i = 0; i <= 5; i++) {
+          _images.add(response[i].urlToImage ?? Constants.dummyImage);
           _strings.add(response[i].title);
+          // print(_images[i] ?? Constants.dummyImage);
+          // print(_strings[i] ?? "Not specified");
         }
         isProgress = false;
         notifyListeners();
@@ -37,12 +42,16 @@ class AllNewsViewModel extends ChangeNotifier {
     } on Exception catch (e) {
       if (e is SocketException) {
         _error = 'Please check your Internet connction';
+        isProgress = false;
         notifyListeners();
       } else if (e is HttpException) {
         _error = 'Something went wrong while calling http';
+        isProgress = false;
         notifyListeners();
       } else if (e is FormatException) {
         _error = 'Please check URL formate and try again';
+        isProgress = false;
+        notifyListeners();
       }
     }
   }

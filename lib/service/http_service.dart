@@ -24,4 +24,16 @@ class HttpService {
     }
     return response;
   }
+
+  // get technology news
+  static Future<http.Response> getTechnologyNews() async {
+    http.Response response;
+    var url = Uri.parse(Constants.everyTechnologyNews);
+    try {
+      response = await http.get(url);
+    } catch (e) {
+      rethrow;
+    }
+    return response;
+  }
 }
