@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider1/constants/constants.dart';
+import 'package:provider1/hooks/shimmer_effect.dart';
 import 'package:provider1/screens/specific_news/specific_news.dart';
 
 @immutable
@@ -91,10 +92,26 @@ class PageUiHook extends StatelessWidget {
             : Center(
                 child: Text(provider.error),
               )
-        : const Center(
-            child: CircularProgressIndicator(
-              color: Colors.yellow,
-            ),
+        : ListView.builder(
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: ShimmerEffect.circular(
+                  width: 64,
+                  height: 64,
+                  shapeBorder: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                ),
+                title: Align(
+                  alignment: Alignment.centerLeft,
+                  child: ShimmerEffect.rectangle(
+                    height: 16,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                  ),
+                ),
+                subtitle: const ShimmerEffect.rectangle(height: 16),
+              );
+            },
+            itemCount: 15,
           );
   }
 }
