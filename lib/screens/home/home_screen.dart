@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider1/screens/home/pages/all_news.dart';
 import 'package:provider1/screens/home/pages/business_news.dart';
+import 'package:provider1/screens/home/pages/entertainment_news.dart';
+import 'package:provider1/screens/home/pages/sports_news.dart';
 import 'package:provider1/screens/home/pages/technology_news.dart';
 import 'package:provider1/view_models/all_news_view_model.dart';
 import 'package:provider1/view_models/business_view_model.dart';
+import 'package:provider1/view_models/entertainment_news_view_model.dart';
+import 'package:provider1/view_models/sports_news_view_model.dart';
 import 'package:provider1/view_models/technology_view_model.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -64,8 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
               create: (BuildContext context) => TechnologyViewModel(),
               child: const TechnologyNews(),
             ),
-            const Text('data'),
-            const Text('data'),
+            ChangeNotifierProvider(
+              create: (BuildContext context) => SportsNewsViewModel(),
+              child: const SportsNews(),
+            ),
+            ChangeNotifierProvider(
+              create: (BuildContext context) => EntertainmentViewModel(),
+              child: const EntertainmentNews(),
+            ),
           ],
         ),
       ),

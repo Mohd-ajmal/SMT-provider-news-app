@@ -36,4 +36,28 @@ class HttpService {
     }
     return response;
   }
+
+  // get sports news
+  static Future<http.Response> getSportsNews() async {
+    http.Response response;
+    var url = Uri.parse(Constants.everySportsNews);
+    try {
+      response = await http.get(url);
+    } catch (e) {
+      rethrow;
+    }
+    return response;
+  }
+
+  // get entertainment news
+  static Future<http.Response> getEntertainmentNews() async {
+    http.Response response;
+    var url = Uri.parse(Constants.everyEntertainmentNews);
+    try {
+      response = await http.get(url);
+    } catch (e) {
+      rethrow;
+    }
+    return response;
+  }
 }
