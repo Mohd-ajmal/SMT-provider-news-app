@@ -26,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'News Today',
-            style: TextStyle(color: Colors.yellow[700]), // FFFBC02D
+            'News tomorrow',
+            style: TextStyle(color: Colors.yellow[800]), // FFFBC02D
           ),
           centerTitle: false,
           elevation: 0,
@@ -37,19 +37,19 @@ class _HomeScreenState extends State<HomeScreen> {
             indicatorColor: Colors.yellow[700],
             tabs: const [
               Tab(
-                text: "All News",
+                text: "All Newses",
               ),
               Tab(
-                text: "Business",
+                text: "Businesses",
               ),
               Tab(
-                text: "Technology",
+                text: "Technologies",
               ),
               Tab(
-                text: "Sports",
+                text: "Sportses",
               ),
               Tab(
-                text: "Entertainment",
+                text: "Entertainments",
               ),
             ],
           ),
