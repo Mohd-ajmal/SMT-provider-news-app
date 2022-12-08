@@ -37,19 +37,19 @@ class _HomeScreenState extends State<HomeScreen> {
             indicatorColor: Colors.yellow[700],
             tabs: const [
               Tab(
-                text: "All News",
+                text: "All Newses",
               ),
               Tab(
-                text: "Business",
+                text: "Businesses",
               ),
               Tab(
-                text: "Technology",
+                text: "Technologies",
               ),
               Tab(
-                text: "Sports",
+                text: "Sportses",
               ),
               Tab(
-                text: "Entertainment",
+                text: "Entertainments",
               ),
             ],
           ),
