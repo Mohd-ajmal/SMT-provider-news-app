@@ -13,9 +13,9 @@ class AllNewsViewModel extends ChangeNotifier {
   List get strings => _strings;
   List<Article> get values => _value;
 
-  int _indicatorIndex = 1;
+  int _indicatorIndex = 0;
   String _error = '';
-  bool isProgress = true;
+  bool isProgress = false;
   final List _images = [];
   final List _strings = [];
   late List<Article> _value;
@@ -32,8 +32,8 @@ class AllNewsViewModel extends ChangeNotifier {
         for (int i = 0; i <= 5; i++) {
           _images.add(response[i].urlToImage ?? Constants.dummyImage);
           _strings.add(response[i].title);
-          // print(_images[i] ?? Constants.dummyImage);
-          // print(_strings[i] ?? "Not specified");
+          print(_images[i] ?? Constants.dummyImage);
+          print(_strings[i] ?? "Not specified");
         }
         isProgress = false;
         notifyListeners();
