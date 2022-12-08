@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             'News tomorrow',
             style: TextStyle(color: Colors.yellow[800]), // FFFBC02D
           ),
-          centerTitle: true,
+          centerTitle: false,
           elevation: 0,
           bottom: TabBar(
             isScrollable: true,
