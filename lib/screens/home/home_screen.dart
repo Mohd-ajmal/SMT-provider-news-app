@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'News Today',
+            'News tomorrow',
             style: TextStyle(color: Colors.yellow[700]), // FFFBC02D
           ),
           centerTitle: false,
