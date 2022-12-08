@@ -13,7 +13,7 @@ class AllNewsViewModel extends ChangeNotifier {
   List get strings => _strings;
   List<Article> get values => _value;
 
-  int _indicatorIndex = 0;
+  int _indicatorIndex = 1;
   String _error = '';
   bool isProgress = true;
   final List _images = [];
