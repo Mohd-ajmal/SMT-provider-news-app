@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(
             'News tomorrow',
-            style: TextStyle(color: Colors.yellow[700]), // FFFBC02D
+            style: TextStyle(color: Colors.yellow[800]), // FFFBC02D
           ),
           centerTitle: false,
           elevation: 0,
